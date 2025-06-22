@@ -5612,12 +5612,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setupNavigationEvents(); // Configura todos os listeners de navegação
     updateProgressBar(); // Atualiza a barra de progresso no carregamento inicial
 
-    // Exibir modal de usuário se os dados não existirem
-    if (!currentUser) {
-        showModal(userInfoModal);
-    } else {
-        // Se o usuário já está logado, vai direto para o menu principal
-        showSection('menu-principal-section');
+    // A página inicia mostrando a capa. O modal será exibido ao clicar em
+    // "EMBARCAR NESSA CORRIDA" caso ainda não existam dados de usuário.
+    if (currentUser) {
+        // Se já houver dados salvos, o usuário poderá avançar direto ao menu
+        // ao interagir com a capa.
+        console.log('Usuário já registrado, pronto para acessar o menu.');
     }
 });
 
