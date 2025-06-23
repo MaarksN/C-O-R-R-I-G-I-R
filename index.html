@@ -4705,7 +4705,7 @@ function showSection(sectionId, params = {}) {
             // Marcar módulo como visto para a barra de progresso, se não for um quiz obrigatório.
             // Para módulos com quiz, a conclusão é marcada pelo quiz.
             if (!userProgress.modules[`module${moduleNumber}`] || userProgress.modules[`module${moduleNumber}`].completed === undefined) {
-                userProgress[`module${moduleNumber}`] = { completed: true };
+                userProgress.modules[`module${moduleNumber}`] = { completed: true };
                 localStorageManager('userProgress', userProgress);
             }
             console.warn(`Módulo ${moduleNumber} exibido. Conteúdo dinâmico ou quiz específico para este módulo ainda pode precisar de implementação.`);
@@ -5611,6 +5611,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeThemeManager();
     setupNavigationEvents(); // Configura todos os listeners de navegação
     updateProgressBar(); // Atualiza a barra de progresso no carregamento inicial
+    // Garante que a capa seja exibida ao carregar a página
+    showSection('capa-section');
 
     // A página inicia mostrando a capa. O modal será exibido ao clicar em
     // "EMBARCAR NESSA CORRIDA" caso ainda não existam dados de usuário.
