@@ -3281,65 +3281,6 @@
             </div>
         </section>
 
-        <!-- 🔐 MODAL DE ACESSO INICIAL -->
-        <div id="userInfoModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[10000] hidden">
-            <div class="modal-content bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 max-w-lg w-full relative transform -translate-y-full opacity-0 transition-all duration-500 ease-out">
-                <span class="modal-close-btn absolute top-3 right-5 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 text-3xl cursor-pointer" role="button" aria-label="Fechar Modal">&times;</span>
-                <h2 class="modal-title text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center"><span class="rounded-emoji-icon">✨</span> Preencha Seus Dados para Iniciar sua Jornada de Aprendizado!</h2>
-                <form id="userInfoForm" class="modal-form flex flex-col gap-4">
-                    <label for="fullName" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Nome Completo:</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Seu nome completo" required aria-required="true" class="p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-aa-green">
-
-                    <label for="email" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="seu.email@example.com" required aria-required="true" class="p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-aa-green">
-                    <p class="text-sm text-red-500 hidden" id="emailError">Por favor, insira um email válido.</p>
-
-                    <label for="position" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Cargo:</label>
-                    <input type="text" id="position" name="position" placeholder="Seu cargo na empresa" required aria-required="true" class="p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-aa-green">
-
-                    <label for="entryDate" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Data de Entrada:</label>
-                    <input type="date" id="entryDate" name="entryDate" required aria-required="true" class="p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-aa-green">
-                    <p class="text-sm text-red-500 hidden" id="dateError">Por favor, insira uma data válida.</p>
-
-                    <button type="submit" aria-label="Iniciar Trilha de Aprendizado" class="btn-iniciar mt-4 w-full">INICIAR TRILHA</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- 🏆 MODAL DE CERTIFICADO DE CONCLUSÃO -->
-        <div id="certificateModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[10000] hidden">
-            <div class="modal-content bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 max-w-2xl w-full relative transform -translate-y-full opacity-0 transition-all duration-500 ease-out">
-                <span class="modal-close-btn absolute top-3 right-5 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 text-3xl cursor-pointer" role="button" aria-label="Fechar Certificado">&times;</span>
-                <div class="confetti-container relative overflow-hidden h-24 mb-4">
-                    <div class="confetti absolute top-0 left-0 w-3 h-3 bg-red-500 rounded-full animate-fall" style="animation-delay: 0s;"></div>
-                    <div class="confetti absolute top-0 left-1/4 w-3 h-3 bg-blue-500 rounded-full animate-fall" style="animation-delay: 0.5s;"></div>
-                    <div class="confetti absolute top-0 left-2/4 w-3 h-3 bg-green-500 rounded-full animate-fall" style="animation-delay: 1s;"></div>
-                    <div class="confetti absolute top-0 left-3/4 w-3 h-3 bg-yellow-500 rounded-full animate-fall" style="animation-delay: 1.5s;"></div>
-                    <div class="confetti absolute top-0 left-full w-3 h-3 bg-purple-500 rounded-full animate-fall" style="animation-delay: 2s;"></div>
-                </div>
-                <h2 class="certificate-header text-3xl font-bold text-center text-aa-green-darker dark:text-aa-green-lighter mb-4"><span class="rounded-emoji-icon">🎉</span> PARABÉNS, CAMPEÃO(Ã)!</h2>
-                <p class="certificate-subheader text-xl font-semibold text-center text-gray-700 dark:text-gray-300 mb-6">VOCÊ CONCLUIU A TRILHA DE APRENDIZADO!</p>
-                <div class="certificate-body text-gray-600 dark:text-gray-400 text-lg leading-relaxed text-center">
-                    <p><span class="rounded-emoji-icon">📜</span> Certificamos que <strong><span id="certFullName" class="font-extrabold text-aa-dark-blue dark:text-aa-white"></span></strong>, em reconhecimento à sua dedicação e conclusão bem-sucedida de todos os módulos da "Trilha de Aprendizado: Seu Guia Relâmpago para uma Performance Campeã", demonstrando profundo conhecimento e preparo em seu cargo de <strong><span id="certPosition" class="font-extrabold text-arremaq-orange-darker dark:text-arremaq-orange-lighter"></span></strong>.</p>
-                    <p class="mt-4"><span class="rounded-emoji-icon">✨</span> Este certificado é um testemunho do seu compromisso com a excelência e o aprimoramento contínuo em suas atividades na Auto Arremate e Arremaq.</p>
-                </div>
-                <p class="certificate-footer text-gray-500 dark:text-gray-500 text-sm mt-8 text-center"><span class="rounded-emoji-icon">🗓️</span> Emitido em <span id="certIssueDate"></span>.</p>
-                <div class="flex flex-col sm:flex-row justify-center mt-8 btn-actions">
-                    <button id="downloadCertificateBtn" class="btn-iniciar">
-                        <span class="rounded-emoji-icon">📥</span> BAIXAR CERTIFICADO
-                    </button>
-                </div>
-            </div>
-            <style>
-                @keyframes fall {
-                    0% { transform: translateY(-100px) rotateZ(0deg); opacity: 1; }
-                    100% { transform: translateY(600px) rotateZ(720deg); opacity: 0; }
-                }
-                .confetti-container .confetti { animation: fall 3s linear infinite; }
-                .confetti-container .confetti-2 { animation: fall 3s linear infinite; animation-delay: 1s; }
-                .confetti-container .confetti-3 { animation: fall 3s linear infinite; animation-delay: 2s; }
-            </style>
-        </div>
 
         <!-- 🛠️ MENU PRINCIPAL -->
         <section id="menu-principal-section" class="menu-principal-section hidden" data-aos="fade-in">
@@ -3386,16 +3327,6 @@
                         </h3>
                         <p class="text-sm text-gray-500 mt-2 dark:text-gray-400">
                             Explore ferramentas de IA e treinamentos para aprimorar suas habilidades.
-                        </p>
-                    </div>
-                    <!-- Card GERAR CERTIFICADO -->
-                    <div id="generateCertificateCard" class="menu-card disabled" data-aos="fade-up" data-aos-delay="500">
-                        <span class="menu-card-icon"><i class="fas fa-certificate rounded-emoji-icon"></i></span>
-                        <h3 class="menu-card-title">
-                           <span class="rounded-emoji-icon">🏅</span> GERAR CERTIFICADO
-                        </h3>
-                        <p id="certificateProgress" class="text-sm text-gray-500 mt-4 dark:text-gray-400">
-                            Complete todos os módulos da trilha para gerar seu certificado.
                         </p>
                     </div>
                 </div>
@@ -4546,31 +4477,15 @@ const progressBarText = document.getElementById('progress-bar-text');
 // Capa
 const btnIniciarCapa = document.getElementById('btnIniciarCapa');
 
-// Modal de Acesso Inicial
-const userInfoModal = document.getElementById('userInfoModal');
-const userInfoForm = document.getElementById('userInfoForm');
-const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
-const fullNameInput = document.getElementById('fullName');
-const emailInput = document.getElementById('email');
-const positionInput = document.getElementById('position');
-const entryDateInput = document.getElementById('entryDate');
-const emailError = document.getElementById('emailError');
-const dateError = document.getElementById('dateError');
+// Modal de Acesso Inicial removido
 
-// Modal de Certificado
-const certificateModal = document.getElementById('certificateModal');
-const certFullNameSpan = document.getElementById('certFullName');
-const certPositionSpan = document.getElementById('certPosition');
-const certIssueDateSpan = document.getElementById('certIssueDate');
-const downloadCertificateBtn = document.getElementById('downloadCertificateBtn');
+// Modal de Certificado removido
 
 // Menu Principal
 const openManualPitStopBtn = document.getElementById('openManualPitStopBtn');
 const openArenaCampeoesBtn = document.getElementById('openArenaCampeoesBtn');
 const openBoxIdentidadeBtn = document.getElementById('openBoxIdentidadeBtn');
 const openAcademiaRepassadoresBtn = document.getElementById('openAcademiaRepassadoresBtn');
-const generateCertificateCard = document.getElementById('generateCertificateCard');
-const certificateProgressText = document.getElementById('certificateProgress');
 const backToCoverBtnMenu = document.getElementById('backToCoverBtnMenu');
 
 // Módulos e Botões de Navegação (gerais)
@@ -4695,7 +4610,6 @@ function showSection(sectionId, params = {}) {
 
         // Lógicas específicas ao exibir certas seções
         if (sectionId === 'menu-principal-section') {
-            updateCertificateProgress();
             populatePlaybookIndex(); // Repopula o índice para mostrar progresso atualizado
         } else if (sectionId === 'playbook-sec-11-content-main') {
             // Se for o quiz principal, inicializa o quiz
@@ -4841,81 +4755,6 @@ function hideModal(modalElement) {
 }
 
 /**
- * Valida o formulário de informações do usuário.
- * @returns {boolean} True se o formulário for válido, false caso contrário.
- */
-function validateUserInfoForm() {
-    let isValid = true;
-
-    // Validação do nome completo (não vazio)
-    if (fullNameInput.value.trim() === '') {
-        fullNameInput.classList.add('border-red-500');
-        isValid = false;
-    } else {
-        fullNameInput.classList.remove('border-red-500');
-    }
-
-    // Validação do e-mail (formato básico e não vazio)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput.value.trim())) {
-        emailInput.classList.add('border-red-500');
-        emailError.classList.remove('hidden');
-        isValid = false;
-    } else {
-        emailInput.classList.remove('border-red-500');
-        emailError.classList.add('hidden');
-    }
-
-    // Validação do cargo (não vazio)
-    if (positionInput.value.trim() === '') {
-        positionInput.classList.add('border-red-500');
-        isValid = false;
-    } else {
-        positionInput.classList.remove('border-red-500');
-    }
-
-    // Validação da data de entrada (não vazia e formato válido - o input type="date" já ajuda)
-    if (entryDateInput.value === '') {
-        entryDateInput.classList.add('border-red-500');
-        dateError.classList.remove('hidden');
-        isValid = false;
-    } else {
-        entryDateInput.classList.remove('border-red-500');
-        dateError.classList.add('hidden');
-    }
-
-    return isValid;
-}
-
-/**
- * Salva os dados do usuário no localStorage.
- */
-function saveUserInfo() {
-    currentUser = {
-        fullName: fullNameInput.value.trim(),
-        email: emailInput.value.trim(),
-        position: positionInput.value.trim(),
-        entryDate: entryDateInput.value
-    };
-    localStorageManager('currentUser', currentUser);
-    console.log("Dados do usuário salvos:", currentUser);
-
-    // Salvar no Firebase também, se a autenticação estiver pronta
-    if (window.isAuthReady && window.isAuthReady() && window.firebaseDb && window.firebaseCollection && window.firebaseAddDoc) {
-        const userId = window.getCurrentUserId();
-        if (userId) {
-            const usersCollection = window.firebaseCollection(window.firebaseDb, `artifacts/${typeof __app_id !== 'undefined' ? __app_id : 'default-app-id'}/users/${userId}/profile`);
-            window.firebaseAddDoc(usersCollection, {
-                ...currentUser,
-                timestamp: window.firebaseServerTimestamp()
-            }).then(() => {
-                console.log("Dados do usuário salvos no Firestore.");
-            }).catch(error => {
-                console.error("Erro ao salvar dados do usuário no Firestore:", error);
-            });
-        }
-    }
-}
 
 // =====================================================================
 // Funções da Barra de Progresso Global (Item 11)
@@ -4947,10 +4786,6 @@ function updateProgressBar() {
 
     if (progressPercentage >= 100) {
         progressBarText.textContent = "Trilha Concluída! 🎉";
-        enableCertificateGeneration();
-    } else {
-        generateCertificateCard.classList.add('disabled');
-        certificateProgressText.textContent = `Complete todos os módulos da trilha para gerar seu certificado. (${completedModulesCount}/${totalCountableModules} concluídos)`;
     }
 
     progressBarContainer.classList.remove('hidden'); // Certifica que a barra está visível
@@ -5169,8 +5004,6 @@ function endQuiz() {
 
     updateProgressBar();
     updateNavigationButtons();
-    updateCertificateProgress(); // Verifica se todos os módulos estão completos para o certificado
-}
 
 /**
  * Reinicia o quiz.
@@ -5285,87 +5118,6 @@ function populateLeaderboard() {
 // =====================================================================
 // Funções de Controle de Progresso e Certificado (Itens 13, 14, 15)
 // =====================================================================
-
-/**
- * Atualiza o progresso exibido no card de certificado do menu principal.
- */
-function updateCertificateProgress() {
-    const modulesToComplete = Object.keys(userProgress.modules).filter(m => m.startsWith('module') && userProgress.modules[m].score !== undefined); // Apenas módulos com quiz
-    let completedQuizzesCount = 0;
-
-    modulesToComplete.forEach(moduleId => {
-        if (userProgress.modules[moduleId] && userProgress.modules[moduleId].completed) {
-            completedQuizzesCount++;
-        }
-    });
-
-    const progressText = `Quizzes concluídos: ${completedQuizzesCount}/${TOTAL_MODULES_WITH_QUIZ}`;
-    certificateProgressText.textContent = progressText;
-
-    if (completedQuizzesCount >= TOTAL_MODULES_WITH_QUIZ) {
-        generateCertificateCard.classList.remove('disabled');
-        generateCertificateCard.addEventListener('click', showCertificateModal, { once: true }); // Adiciona evento uma vez
-        certificateProgressText.textContent = "Parabéns! Pronto para gerar seu certificado!";
-        playSound('success');
-    } else {
-        generateCertificateCard.classList.add('disabled');
-        generateCertificateCard.removeEventListener('click', showCertificateModal); // Remove se já adicionado
-    }
-}
-
-/**
- * Exibe o modal de certificado e preenche com os dados do usuário.
- */
-function showCertificateModal() {
-    if (!currentUser) {
-        console.error("Dados do usuário não encontrados para gerar certificado.");
-        // TODO: Mostrar uma mensagem de erro na tela para o usuário.
-        return;
-    }
-
-    certFullNameSpan.textContent = currentUser.fullName || 'Nome do Usuário';
-    certPositionSpan.textContent = currentUser.position || 'Cargo';
-    certIssueDateSpan.textContent = new Date().toLocaleDateString('pt-BR'); // Data atual
-
-    showModal(certificateModal);
-    playSound('success'); // Som de celebração
-}
-
-/**
- * Inicia o processo de download/impressão do certificado.
- * TODO: Esta é uma implementação básica. Para um PDF com design,
- * uma biblioteca como jsPDF ou um serviço de backend seria necessário.
- */
-function downloadCertificate() {
-    playSound('click');
-    const originalBody = document.body.innerHTML;
-    const certificateContent = certificateModal.querySelector('.modal-content').innerHTML;
-
-    // Remove botões e elementos interativos do que será impresso
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = certificateContent;
-    tempDiv.querySelector('.modal-close-btn')?.remove();
-    tempDiv.querySelector('.btn-actions')?.remove(); // Remove botões de ação
-
-    const printWindow = window.open('', '', 'height=800,width=800');
-    printWindow.document.write('<html><head><title>Certificado de Conclusão</title>');
-    // Copia os estilos CSS relevantes para a impressão
-    const styles = Array.from(document.querySelectorAll('style, link[rel="stylesheet"]'))
-        .map(link => link.outerHTML)
-        .join('');
-    printWindow.document.write(styles);
-    printWindow.document.write('</head><body>');
-    printWindow.document.write('<div style="font-family: \'Inter\', sans-serif; padding: 40px;">');
-    printWindow.document.write(tempDiv.innerHTML);
-    printWindow.document.write('</div></body></html>');
-    printWindow.document.close();
-
-    printWindow.onload = () => {
-        printWindow.focus(); // Foca na nova janela
-        printWindow.print(); // Abre a caixa de diálogo de impressão
-        // printWindow.close(); // Fecha a janela após a impressão (opcional)
-    };
-}
 
 
 // =====================================================================
@@ -5613,57 +5365,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgressBar(); // Atualiza a barra de progresso no carregamento inicial
     // Garante que a capa seja exibida ao carregar a página
     showSection('capa-section');
-
-    // A página inicia mostrando a capa. O modal será exibido ao clicar em
-    // "EMBARCAR NESSA CORRIDA" caso ainda não existam dados de usuário.
-    if (currentUser) {
-        // Se já houver dados salvos, o usuário poderá avançar direto ao menu
-        // ao interagir com a capa.
-        console.log('Usuário já registrado, pronto para acessar o menu.');
-    }
 });
 
 
-// =====================================================================
-// Implementação de Lógicas dos Itens 10 a 19 do Plano de Execução
-// =====================================================================
-
-// --- Item 10: Lógica de Acesso Inicial ---
-userInfoForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Previne o envio padrão do formulário
-    playSound('click');
-
-    if (validateUserInfoForm()) {
-        saveUserInfo();
-        hideModal(userInfoModal);
-        showSection('menu-principal-section'); // Navega para o menu principal
-    } else {
-        // Feedback visual de erro já é feito na validação
-        console.log("Formulário inválido.");
-        playSound('error');
-    }
-});
-
-modalCloseBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const modalToClose = e.target.closest('.modal');
-        if (modalToClose) {
-            hideModal(modalToClose);
-        }
-    });
-});
-
-btnIniciarCapa.addEventListener('click', () => {
-    playSound('click');
-    if (!currentUser) {
-        showModal(userInfoModal);
-    } else {
-        showSection('menu-principal-section');
-    }
-});
 
 // --- Item 16: Lógica de Navegação --- (Event Listeners Globais)
 function setupNavigationEvents() {
+    btnIniciarCapa.addEventListener('click', () => {
+        playSound('click');
+        showSection('menu-principal-section');
+    });
     // Botões do menu principal
     openManualPitStopBtn.addEventListener('click', () => showSection('manual-pitstop-detalhes-section'));
     openArenaCampeoesBtn.addEventListener('click', () => showSection('playbook-sec-arena-campeoes-main'));
